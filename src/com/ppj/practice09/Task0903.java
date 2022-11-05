@@ -40,9 +40,11 @@ class Task0903 {
             }
             case "usa": {
                 System.out.println(String.format("%.2f mpg = %.2fl/100km", value, k / value));
+                break;
             }
             default: {
                 System.out.println("Unknown units");
+                break;
             }
         }
     }
