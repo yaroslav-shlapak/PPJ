@@ -17,7 +17,6 @@ class Task1102 {
         java.util.Scanner scanner = new java.util.Scanner(System.in);
         int a = scanner.nextInt();
         int b = scanner.nextInt();
-        boolean isPrime = true;
         while (a != b) {
             if (a > b) {
                 a -= b;
