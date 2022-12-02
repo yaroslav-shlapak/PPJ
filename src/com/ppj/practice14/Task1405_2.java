@@ -21,9 +21,7 @@ in and out of all his/her accounts (for the data as in the example above, these 
 the program should work correctly without any other changes
  */
 
-import java.util.Arrays;
-
-class Task1405 {
+class Task1405_2 {
     public static void main(String[] args) {
         int[][][] opers = {
                 {
@@ -43,42 +41,21 @@ class Task1405 {
                 }
         };
 
-        int[] userCount = new int[1];
-        userCount[0] = 0;
-        int maxUsers = 1024;
-        int[] usersBalance = new int[maxUsers];
-        int[] users = new int[maxUsers];
+        int[] usersBalance = new int[opers.length];
         for (int i = 0; i < opers.length; i++) {
+            int sum = 0;
             for (int j = 0; j < opers[i].length; j++) {
-                int user = opers[i][j][0];
-                for (int k = 1; k < opers[i][j].length; k++) {
-                    int balance = opers[i][j][k];
-                    updateBalanceForUser(user, balance, usersBalance, users, userCount);
+                for (int k = 0; k < opers[i][j].length; k++) {
+                    sum += opers[i][j][k];
                 }
             }
+            usersBalance[i] = sum;
         }
 
-        for (int i = 0; i < userCount[0]; i++) {
-            System.out.print("user " + users[i] + " has balance = " + usersBalance[i]);
+        for (int i = 0; i < usersBalance.length; i++) {
+            System.out.print("user " + i + " has balance = " + usersBalance[i]);
             System.out.println();
         }
 
     }
-
-    private static void updateBalanceForUser(int user, int balance, int[] usersBalance, int[] users, int[] userCount) {
-        int userIndex = -1;
-        for (int i = 0; i < userCount[0]; i++) {
-            if (users[i] == user) {
-                userIndex = i;
-            }
-        }
-        if (userIndex == -1) {
-            users[userCount[0]] = user;
-            usersBalance[userCount[0]] = balance;
-            userCount[0] += 1;
-        } else {
-            usersBalance[userIndex] += balance;
-        }
-    }
-
 }
