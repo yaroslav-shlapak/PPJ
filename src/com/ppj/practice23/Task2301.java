@@ -72,12 +72,15 @@ class Task2201 {
                     if (first != null && pairOfFirst.equals(item)) {
                         queue.pop();
                     } else {
+                        System.out.println("The next line is not OK: ");
+                        System.out.println(line);
                         throw new Error("ERROR " + item + " found, but " + first + " expected. ");
                     }
                 } else if (isStarting) {
                     queue.push(item);
                 }
             }
+            System.out.println("The next line is OK: " + line);
         }
     }
 }
