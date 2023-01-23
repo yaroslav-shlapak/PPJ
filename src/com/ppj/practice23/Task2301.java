@@ -41,7 +41,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-class Task2201 {
+class Task2402 {
     public static <List> void main(String[] args) {
         String[] inputs = {
                 "(sd{a}[b])",
