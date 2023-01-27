@@ -51,7 +51,7 @@ class Test03 {
                         for (int j = 0; j < count; j++) {
                             newArr[i + 1] = arr[i];
                         }
-                        arr[count++] = element;
+                         
                     }
                 }
             }
